@@ -56,3 +56,72 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event - Event Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="view_events.php">View Events</a></li>
+                <li><a href="add_event_form.php">Add Event</a></li>
+                <li><a href="about_us.php">About Us</a></li>
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Add Event Form -->
+    <section class="add-event-section">
+        <h1>Add a New Event</h1>
+        <form action="add_event.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="event_name">Event Name:</label>
+                <input type="text" id="event_name" name="event_name" required>
+            </div>
+            <div class="form-group">
+                <label for="event_date">Event Date:</label>
+                <input type="date" id="event_date" name="event_date" required>
+            </div>
+            <div class="form-group">
+                <label for="event_time">Event Time:</label>
+                <input type="time" id="event_time" name="event_time" required>
+            </div>
+            <div class="form-group">
+                <label for="event_location">Event Location:</label>
+                <input type="text" id="event_location" name="event_location" required>
+            </div>
+            <div class="form-group">
+                <label for="event_description">Event Description:</label>
+                <textarea id="event_description" name="event_description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="event_image">Event Image:</label>
+                <input type="file" id="event_image" name="event_image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <button type="submit">Add Event</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Event Management System | Designed with passion</p>
+    </footer>
+
+</body>
+
+</html>
